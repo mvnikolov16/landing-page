@@ -42,7 +42,10 @@
                         <source src="your-video.mp4" type="video/mp4">
                     </video>
                 -->
-                <iframe src="https://www.youtube.com/embed/xaVPo_pRJ_s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="vsl-thumbnail" id="vsl-thumbnail" onclick="playVSL()">
+                    <img src="https://img.youtube.com/vi/xaVPo_pRJ_s/maxresdefault.jpg" alt="Watch VSL">
+                    <div class="play-btn">&#9654;</div>
+                </div>
             </div>
         </div>
 
@@ -78,6 +81,20 @@
             Join <strong>30+ business owners</strong> who made the right decision who x2 their revenue because of this one free call
         </p>
     </section>
+
+    <script>
+    function playVSL() {
+        var wrapper = document.querySelector('.vsl-wrapper');
+        var thumbnail = document.getElementById('vsl-thumbnail');
+        thumbnail.remove();
+        var iframe = document.createElement('iframe');
+        iframe.src = 'https://www.youtube.com/embed/xaVPo_pRJ_s?autoplay=1&modestbranding=1&rel=0';
+        iframe.frameBorder = '0';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+        iframe.allowFullscreen = true;
+        wrapper.appendChild(iframe);
+    }
+    </script>
 
 </body>
 </html>
